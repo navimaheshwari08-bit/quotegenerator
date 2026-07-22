@@ -1,0 +1,212 @@
+:root {
+    --bg-cosmic: #0a0a16;
+    --card-glow-full: rgba(255, 255, 230, 0.15);
+    --card-glow-crescent: rgba(180, 200, 255, 0.15);
+    --text-primary: #f8f9fa;
+    --text-poetic: #dcd6cd;
+    --gold-glow: #dfc15d;
+}
+
+body {
+    background-color: var(--bg-cosmic);
+    color: var(--text-primary);
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Background Stars and Twilight Atmosphere */
+.stars, .twinkling {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100%; height: 100%;
+    display: block;
+}
+.stars {
+    background: #000 url(https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?q=80&w=3000) repeat;
+    opacity: 0.3;
+    z-index: 0;
+}
+
+
+.philosophical-title {
+    font-family: 'Cinzel', serif;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(255,255,255,0.3);
+}
+
+.poetic-subtitle {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: var(--text-poetic);
+}
+
+
+.moon-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px 20px;
+    cursor: pointer;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.moon-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.moon-card[data-moon="full"]:hover {
+    box-shadow: 0 0 30px var(--card-glow-full);
+    border-color: #fffae6;
+}
+
+.moon-card[data-moon="crescent"]:hover {
+    box-shadow: 0 0 30px var(--card-glow-crescent);
+    border-color: #b0c4de;
+}
+
+.moon-image-holder {
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.moon-img {
+    max-height: 130px;
+    transition: transform 0.8s ease;
+}
+
+.moon-card:hover .moon-img {
+    transform: rotate(15deg) scale(1.05);
+}
+
+.moon-name {
+    font-family: 'Cinzel', serif;
+    font-size: 1.5rem;
+}
+
+.moon-desc {
+    font-size: 0.9rem;
+    color: #a0a0b0;
+}
+
+
+.quote-box {
+    max-width: 750px;
+    background: rgba(10, 10, 25, 0.7);
+    border: 1px solid rgba(223, 193, 93, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(12px);
+}
+
+.quote-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.75rem;
+    line-height: 1.6;
+    color: var(--text-primary);
+}
+
+.quote-author {
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    color: var(--gold-glow);
+    margin-top: 20px;
+}
+
+
+.btn-outline-cosmic {
+    border-color: rgba(255,255,255,0.2);
+    color: var(--text-poetic);
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.85rem;
+    border-radius: 30px;
+    padding: 6px 16px;
+}
+
+.btn-outline-cosmic.active, .btn-outline-cosmic:hover {
+    background: var(--gold-glow);
+    border-color: var(--gold-glow);
+    color: #000;
+}
+
+.btn-action-cosmic {
+    background: transparent;
+    border: 1px solid var(--gold-glow);
+    color: var(--gold-glow);
+    border-radius: 30px;
+    padding: 10px 24px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.btn-action-cosmic:hover {
+    background: var(--gold-glow);
+    color: #000;
+    box-shadow: 0 0 15px rgba(223,193,93,0.4);
+}
+
+.btn-link-cosmic {
+    background: none;
+    border: none;
+    color: #a0a0b0;
+    text-decoration: underline;
+    font-size: 0.9rem;
+}
+
+.btn-link-cosmic:hover {
+    color: var(--text-primary);
+}
+
+
+.grok-input-section {
+    max-width: 750px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.cosmic-input {
+    background: rgba(0, 0, 0, 0.3) !important;
+    border: 1px solid rgba(255,255,255,0.1) !important;
+    color: white !important;
+}
+
+.cosmic-input:focus {
+    border-color: var(--gold-glow) !important;
+    box-shadow: 0 0 10px rgba(223,193,93,0.2) !important;
+}
+
+.btn-grok {
+    background: #191932;
+    color: var(--text-primary);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.btn-grok:hover {
+    background: var(--text-primary);
+    color: #000;
+}
+
+
+.saved-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: left;
+}
+
+
+.fade-in-element {
+    animation: fadeIn 1.2s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

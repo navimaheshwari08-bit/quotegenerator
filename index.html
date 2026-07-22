@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Every Feeling Has a Meaning 🌙</title>
+    
+    <!-- Bootstrap 5 CSS Framework -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Typography Engine Connections -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    
+    <!-- Core Style Sheet Reference -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Parallax Space Canvas Containers -->
+    <div class="stars"></div>
+    <div class="twinkling"></div>
+
+    <!-- Main Dynamic Interface Layout Viewport -->
+    <div class="container d-flex flex-column justify-content-center align-items-center min-vh-100 text-center position-relative z-3">
+        
+        <!-- Viewport Module 1: Gateway Portal -->
+        <div id="gateway-section" class="fade-in-element">
+            <h1 class="philosophical-title mb-2">Every feeling has a meaning.</h1>
+            <p class="poetic-subtitle mb-5">What's your favourite moon?</p>
+            
+            <div class="row justify-content-center gap-5 mt-4">
+                <!-- Full Moon Selection Interface Target Node -->
+                <div class="col-md-4 moon-card" data-moon="full">
+                    <div class="moon-image-holder">
+                        <img src="img1.png" alt="Full Moon" class="img-fluid moon-img" style="border-radius: 50%;">
+                    </div>
+                    <h3 class="moon-name mt-3">Full Moon</h3>
+                    <p class="moon-desc">Wholeness, clarity, celebration, existential truth.</p>
+                </div>
+
+                <!-- Crescent Moon Selection Interface Target Node -->
+                <div class="col-md-4 moon-card" data-moon="crescent">
+                    <div class="moon-image-holder">
+                        <img src="image.png" alt="Crescent Moon" class="img-fluid moon-img" style="border-radius: 50%;">
+                    </div>
+                    <h3 class="moon-name mt-3">Crescent Moon</h3>
+                    <p class="moon-desc">Introspection, longing, solitude, quiet hope.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Viewport Module 2: The Core Workspace Dashboard -->
+        <div id="dashboard-section" class="w-100 d-none">
+            
+            <!-- Category Filtering Panel Array Layout -->`
+            <div class="d-flex flex-wrap justify-content-center gap-2 mb-4 category-container">
+                <button class="btn btn-outline-cosmic cat-btn active" data-category="All">All Space</button>
+                <button class="btn btn-outline-cosmic cat-btn" data-category="Existentialism">Existentialism</button>
+                <button class="btn btn-outline-cosmic cat-btn" data-category="Love">Love</button>
+                <button class="btn btn-outline-cosmic cat-btn" data-category="Grief">Grief</button>
+                <button class="btn btn-outline-cosmic cat-btn" data-category="Hope">Hope</button>
+                <button class="btn btn-outline-cosmic cat-btn" data-category="Poetry">Poetry</button>
+                <button class="btn btn-outline-cosmic cat-btn" data-category="Loneliness">Loneliness</button>
+            </div>
+
+            <!-- Focus Element: Interactive Dynamic Engine Projection Display Output Card -->
+            <div class="quote-box mx-auto my-4 p-5 position-relative">
+                <p id="quote-text" class="quote-text">"Gaze into the cosmos to materialize your reflections..."</p>
+                <p id="quote-author" class="quote-author">— The Night Sky</p>
+                
+                <div class="quote-actions mt-4 d-flex justify-content-center gap-3">
+                    <button id="save-quote-btn" class="btn btn-action-cosmic" title="Save to Moon Diary">✨ Save to Diary</button>
+                    <button id="next-quote-btn" class="btn btn-action-cosmic">Another Feeling →</button>
+                </div>
+            </div>
+
+            <!-- Interactive Search Prompt Core Block Context Node Container -->
+            <div class="grok-input-section mx-auto p-4 mt-4">
+                <div class="d-flex justify-content-between align-items-center mb-2 flex-wrap gap-2">
+                    <h5 class="poetic-subtitle m-0 text-start">Speak to the night...</h5>
+                    <!-- Strategy Parameter Switch Controller Hook -->
+                    <button id="toggle-movie-mode" class="btn btn-sm btn-outline-cosmic" type="button">🎬 Switch to Movie Mode</button>
+                </div>
+                <p class="text-muted text-start small mb-3">Describe your raw, current emotion, or input a cinematic masterpiece to evoke matching stellar insights.</p>
+                
+                <div class="input-group">
+                    <input type="text" id="grok-feeling-input" class="form-control cosmic-input" placeholder="e.g., I feel like a ghost drifting through a crowded room...">
+                    <button id="grok-submit-btn" class="btn btn-grok" type="button">Evoke Quote</button>
+                </div>
+                <!-- Interactive Loading Component State Hook Target -->
+                <div id="grok-loading" class="text-muted small mt-2 d-none">Consulting the star grid...</div>
+            </div>
+
+            <!-- Workspace Flow State Traversal Actions -->
+            <div class="mt-5 d-flex gap-3 justify-content-center">
+                <button id="view-diary-btn" class="btn btn-link-cosmic">📖 Open My Moon Diary</button>
+                <button id="back-to-moons" class="btn btn-link-cosmic">🌙 Change Moon Perspective</button>
+            </div>
+        </div>
+
+        <!-- Viewport Module 3: Storage Ledger Output Display Section -->
+        <div id="diary-section" class="w-100 d-none">
+            <h2 class="philosophical-title mb-2">My Moon Diary</h2>
+            <p class="poetic-subtitle mb-5">Saved echoes of your passing sentiments</p>
+            
+            <!-- JavaScript Dynamic List Target Mapping Location Grid Container -->
+            <div id="diary-container" class="row justify-content-center g-4 max-w-lg mx-auto"></div>
+            
+            <button id="close-diary-btn" class="btn btn-action-cosmic mt-5">← Back to Reflection</button>
+        </div>
+
+    </div>
+
+    <!-- Script Library Dependencies Assembly Bridge Section -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Local App Execution Configurations and Variables Context Layer Hook -->
+    <script src="config.js"></script>
+    
+    <!-- Local Application Control Engine Script File Reference -->
+    <script src="script.js"></script>
+</body>
+</html>
